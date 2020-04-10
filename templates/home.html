@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html>
-<title>Airline-delay-Prediction App</title>
+<html lang="pt-br">
+<title>COVID-19 Triagem por Hemograma</title>
 <body>
 
 <form action = "/getdelay" method="POST">
-<p> Select Origin:<input name="origin" type ="text" value="JFK" /> </p>
-<p> Select Destination: <input name="dest" type ="text" value="LAX" /> </p>
-<p> Select Airline :   
-<select name="unique_carrier">
-<option value="AA">American Airlines </option>
-<option value="DL">Delta Air Lines </option>
-<option value="B6">JetBlue Airways</option>
-<option value="WN">Southwest Airlines </option>
-<option value="UA" selected>United Air Lines </option>
-</select>
-<p> Select Day of Week:<input name="day_of_week" type ="text" value="1" /> </p>
-<p> Select Departure Hour: <input name="dep_hour" type ="text" value="10" /> </p>
+<p> Idade (anos):<input name="age" type ="text" placeholder="30" pattern="[0-9]{3}" /> </p>
+<p> Leucócitos (/&micro;L): <input name="leukocytes" type ="text" placeholder="6000" /> </p>
+<p> Monócitos (/&micro;L): <input name="monocytes" type ="text" placeholder="500" /> </p>
+<p> Plaquetas (/&micro;L): <input name="platelets" type ="text" placeholder="300000" /> </p>
 <p> <input type ="submit" value="submit" /> </p>
 </form>
 </body>
