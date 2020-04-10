@@ -19,13 +19,13 @@ def get_delay():
 
         cat_vector = [[leukocytes, monocytes, platelets, age]]
         
-        pkl_scaler = open('scaler.pkl', 'rb')
-        pkl_model = open('logmodel.pkl', 'rb')
+        # with open('scaler.pkl', 'rb') as f:
+        #     scaler = pickle.load(f)
+        
+        with open('logmodel.pkl', 'rb') as f:
+            logmodel = pickle.load(f)
 
-        scaler = pickle.load(pkl_scaler)
-        logmodel = pickle.load(pkl_model)
-
-        cat_vector = scaler.transform(cat_vector)
+        # cat_vector = scaler.transform(cat_vector)
         prediction = logmodel.predict(cat_vector)
         
         return render_template('result.html', prediction=prediction)
