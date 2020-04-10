@@ -4,11 +4,12 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import MinMaxScaler
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='templates/assets')
 
 @app.route('/')
 def home():
-	return render_template('home.html')
+	# return render_template('home.html')
+	return render_template('triagem.html')
 
 @app.route('/getdelay', methods=['POST','GET'])
 def get_delay():

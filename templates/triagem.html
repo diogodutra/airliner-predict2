@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+
+        <!-- ==============================================
+        Basic Page Needs
+        =============================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+
+        <title>COVID-19 Triagem por Hemograma</title>
+
+        <meta name="description" content="Creative Agency, Corporate Business & Personal Portfolio Website Template">
+        <meta name="subject" content="Creative Agency, Corporate Business & Personal Portfolio Website Template">
+        <meta name="author" content="Codings">
+
+        <!-- ==============================================
+        Favicons
+        =============================================== -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+
+        <!-- ==============================================
+        Vendor Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/slider.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/icons.min.css">
+        <link rel="stylesheet" href="assets/css/gallery.min.css">
+        <link rel="stylesheet" href="assets/css/animation.min.css">
+
+        <!-- ==============================================
+        Custom Stylesheet
+        =============================================== -->
+        <link rel="stylesheet" href="assets/css/custom.css">
+        
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header>
+
+            <!-- Navbar -->
+            <nav data-aos="zoom-out" data-aos-delay="800" class="navbar navbar-expand">
+                <div class="container">
+
+                    <!-- Navbar Brand-->
+                    <a class="navbar-brand">
+                        Adapt<i>.Health</i>
+                        <!-- 
+                            Custom Logo
+                            <img src="assets/images/logo.svg" alt="Leverage">
+                        -->
+                    </a>
+
+                    <!-- Navbar Itens-->
+                    <ul class="navbar-nav items ml-auto">
+                        <li class="nav-item">
+                            <a href="triagem.html" class="nav-link bright">Triagem</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="sobre.html" class="nav-link bright">Sobre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contato.html" class="nav-link bright">Contato</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </nav>
+
+        </header>
+        
+        <!-- Footer -->
+        <footer>
+
+            <!-- Contact -->
+            <section id="contact" class="bg-white-color">
+                <div class="container fluid">
+                    <div class="row">
+
+                        <div class="col-12 col-lg-6 pr-lg-5 pb-5 pb-lg-0 align-self-center text-center text-sm-left">
+                            
+                            <div class="row layout-title">
+                                <div class="col-12 p-0">
+
+                                    <!-- Text 1 -->
+                                    <div id="text-1">
+                                        <h1 class="featured alt">COVID-19?</h1>
+                                        <p>Utilize essa calculadora para a triagem, permitindo um uso <b>racionalizado</b> de kits de teste SARS-CoV-2 RT-PCR.</p>
+                                    </div>
+
+                                    <!-- Text 2 -->
+                                    <div id="text-2" style="display: none">
+                                        <h2 class="featured alt">Forms Work</h2>
+                                        <p>This template has an indispensable differential on a web page. <b>The forms are functional</b> with field validation.</p>
+                                    </div>
+
+                                    <!-- Text 3 -->
+                                    <div id="text-3" style="display: none">
+                                        <h2 class="featured alt">Limited Offer</h2>
+                                        <p>With so many resources it is difficult to believe that it is sold for such a low price. <b>Run!</b> It is for a limited time.</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-12 p-0">
+                                    <form action="/getdelay" method="POST">
+                                    <!-- <form id="msform" action="/getdelay" method="POST"> -->
+                                        
+
+                                        <!-- Group 1 -->
+                                        <fieldset id="group-1">
+                                            <div class="row">
+                                                <h5>Idade (anos)</h5>
+                                                <div class="col-12 input-group p-0">
+                                                    <input type="number" name="age" minlength="1" class="form-control input-light" placeholder="10" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <h5>Leucócitos (/&micro;L)</h5>
+                                                <div class="col-12 input-group p-0">
+                                                    <input type="number" name="leukocytes" minlength="1" class="form-control input-light" placeholder="6000" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <h5>Monócitos (/&micro;L)</h5>
+                                                <div class="col-12 input-group p-0">
+                                                    <input type="number" name="monocytes" minlength="1" class="form-control input-light" placeholder="500" required>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <h5>Plaquetas (/&micro;L)</h5>
+                                                <div class="col-12 input-group p-0">
+                                                    <input type="number" name="platelets" minlength="1" class="form-control input-light" placeholder="300000" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 input-group p-0">
+                                                <a class="next0 btn btn-primary-color">SUBMETER
+                                                    <input  class="next0 btn btn-primary-color" type ="submit" value=""/>
+                                                    <i class="btn-icon icon-arrow-right-circle left"></i>
+                                                 </a>
+                                            </div>
+                                        </fieldset>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery col-12 col-lg-6 pl-lg-5 d-none d-lg-block">
+
+                            <!-- Step 1 -->
+                            <a id="step-1" data-poster="assets/images/about-2-creative-agency.jpg" href="">
+                                <div class="mask-light-radius"></div>
+                                <img src="assets/images/about-2-creative-agency.jpg" class="image-fit">
+                            </a>
+
+                            <!-- Step 2 -->
+                            <a id="step-2" href="assets/images/about-1-portfolio.jpg" style="display:none">
+                                <img src="assets/images/about-1-portfolio.jpg" class="image-fit">
+                            </a>
+
+                            <!-- Step 3 -->
+                            <a id="step-3" href="assets/images/about-1-digital-agency.jpg" style="display:none">
+                                <img src="assets/images/about-1-digital-agency.jpg" class="image-fit">
+                            </a>
+
+                            <!-- Step 4 -->
+                            <a id="step-4" href="assets/images/contact-1.jpg" style="display:none">
+                                <img src="assets/images/contact-1.jpg" class="image-fit">
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </footer>
+
+        <!-- Modal [responsive menu] -->
+        <div id="menu" class="modal fade p-0" role="dialog" aria-labelledby="menu" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-slideout" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-white-color" data-dismiss="modal">
+                        Menu Options <i class="icon-close icon-close"></i>
+                    </div>
+                    <div class="menu modal-body container bg-white-color">
+                        <div class="row w-100">
+                            <div class="items p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                            <div class="contacts p-0 col-12 text-center">
+                                <!-- Append [navbar] -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll [to top] -->
+        <div id="scroll-to-top" class="scroll-to-top">
+            <a href="#">
+                <i class="icon-arrow-up bg-white-color primary-color"></i>
+            </a>
+        </div>
+
+        <!-- ==============================================
+        Vendor Scripts
+        =============================================== -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/slider.min.js"></script>
+        <script src="assets/js/gallery.min.js"></script>
+        <script src="assets/js/animation.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
