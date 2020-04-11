@@ -42,7 +42,7 @@
 .black-color { color: #040402 }
 
 .yellow-color { color: #CEFF1A }
-.green-color { color: #65FF00 }
+.green-color { color: #004d00 }
 
 .light-blue-color { color: #1a8fe3 }
 .blue-color { color: #1E50BC } 
@@ -74,7 +74,7 @@
 .bg-black-color { background-color: #040402 }
 
 .bg-yellow-color { background-color: #CEFF1A }
-.bg-green-color { background-color: #65FF00 }
+.bg-green-color { background-color: #004d00 }
 
 .bg-light-blue-color { background-color: #1a8fe3 }
 .bg-blue-color { background-color: #1E50BC }
@@ -126,7 +126,7 @@ button.btn-yellow-color:hover, button.btn-yellow-color:focus {
 
 a.btn-green-color, button.btn-green-color {
     background-color: transparent;
-    border: 1px solid #65FF00;
+    border: 1px solid #004d00;
     color: #f5f5f5;
 }
 
@@ -190,8 +190,8 @@ button.btn-deep-blue-color:hover, button.btn-deep-blue-color:focus {
 }
 
 .bright-yellow-static {
-    background: -webkit-linear-gradient(45deg, #65FF00 15%, #CEFF1A 65%);
-    background: linear-gradient(45deg, #65FF00 15%, #CEFF1A 65%);
+    background: -webkit-linear-gradient(45deg, #004d00 15%, #CEFF1A 65%);
+    background: linear-gradient(45deg, #004d00 15%, #CEFF1A 65%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -397,8 +397,8 @@ body.technology .bright-ready i {
 }
 
 .bg-bright-yellow-static {
-    background: -webkit-linear-gradient(45deg, #65FF00 15%, #CEFF1A 65%);
-    background: linear-gradient(45deg, #65FF00 15%, #CEFF1A 65%);
+    background: -webkit-linear-gradient(45deg, #004d00 15%, #CEFF1A 65%);
+    background: linear-gradient(45deg, #004d00 15%, #CEFF1A 65%);
 }
 
 .bg-bright-blue-static {

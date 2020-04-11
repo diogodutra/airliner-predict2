@@ -11,21 +11,26 @@ def home():
 	# return render_template('home.html')
 	return render_template('triagem.html')
 
-@app.route('/getdelay', methods=['POST','GET'])
+@app.route('/triagem-resultado', methods=['POST','GET'])
 def get_delay():
     if request.method=='POST':
 
+        dict_results = {
+            0: ('Negativo', 'Dispensar do teste SARS-CoV-2 RT-PCR.', '#b4ecb4', 'icon-check'),
+            1: ('Inconclusivo', 'Encaminhar ao teste SARS-CoV-2 RT-PCR.', '#ffd394', 'icon-question'),
+        }
+
         result = request.form
 
-        age = float(result['age'])
-        leukocytes = float(result['leukocytes'])
-        monocytes = float(result['monocytes'])
-        platelets = float(result['platelets'])
+        str_age = result['age']
+        str_leukocytes = result['leukocytes']
+        str_monocytes = result['monocytes']
+        str_platelets = result['platelets']
 
-        leukocytes = leukocytes / 11e3 * 6 - 2
-        monocytes = monocytes / 1e3 * 6 - 2
-        platelets = platelets / 450e3 * 6 - 2
-        # age = round(age / 20)
+        age = float(str_age) # / 20 # round()
+        leukocytes = float(str_leukocytes) / 11e3 * 6 - 2
+        monocytes = float(str_monocytes) / 1e3 * 6 - 2
+        platelets = float(str_platelets) / 450e3 * 6 - 2
 
         cat_vector = [[leukocytes, monocytes, platelets, age]]
         
@@ -38,7 +43,17 @@ def get_delay():
         cat_vector = scaler.transform(cat_vector)
         prediction = logmodel.predict(cat_vector)
         
-        return render_template('result.html', prediction=prediction)
+        # return render_template('result.html', prediction=prediction)
+        return render_template('triagem-resultado.html',
+                                result=dict_results[prediction[0]][0],
+                                legend=dict_results[prediction[0]][1],
+                                bg_color=dict_results[prediction[0]][2],
+                                icon=dict_results[prediction[0]][3],
+                                age=str_age,
+                                leukocytes=str_leukocytes,
+                                monocytes=str_monocytes,
+                                platelets=str_platelets,
+                                )
 
     
 if __name__ == '__main__':

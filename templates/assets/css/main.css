@@ -1813,7 +1813,7 @@ iframe {
 
 .btn {
     width: fit-content;
-    max-width: 300px;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
