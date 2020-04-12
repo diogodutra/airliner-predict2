@@ -10,7 +10,6 @@ app = Flask(__name__, static_folder='templates/assets')
 
 @app.route('/')
 def home():
-	# return render_template('home.html')
 	return render_template('triagem.html')
 
 @app.route('/triagem-resultado', methods=['POST','GET'])
@@ -31,29 +30,32 @@ def get_delay():
 
         # convert to Albert Einstein dataset
         age = float(str_age) # / 20 # round()
-        leukocytes = float(str_leukocytes) / 11e3 * 6 - 2
-        monocytes = float(str_monocytes) / 1e3 * 6 - 2
-        platelets = float(str_platelets) / 450e3 * 6 - 2
+        leukocytes = float(str_leukocytes) / 11e3  * 6 - 2
+        monocytes  = float(str_monocytes)  / 1e3   * 6 - 2
+        platelets  = float(str_platelets)  / 450e3 * 6 - 2
 
         # create input vector for model
         cat_vector = [[leukocytes, monocytes, platelets, age]]
         
-        # with open('scaler.pkl', 'rb') as f:
-        #     scaler = pickle.load(f)
+        with open('scaler.pkl', 'rb') as f:
+            scaler = pickle.load(f)
         
-        # with open('logmodel.pkl', 'rb') as f:
-        #     model = pickle.load(f)
+        with open('model.pkl', 'rb') as f:
+            model = pickle.load(f)
 
-        # cat_vector = scaler.transform(cat_vector)
+        cat_vector = scaler.transform(cat_vector)
         # prediction = model.predict(cat_vector)
+        probability = model.predict_proba(cat_vector)
+        # print(probability[0,0])
+        prediction = [0] if (probability[0, 0]>.98) else [1]
 
-        prediction = [1]
-        if leukocytes < -1.5 : prediction = [0]
-        if leukocytes >   .32: prediction = [0]
-        if platelets  < -2.1 : prediction = [0]
-        if platelets  >  1.8 : prediction = [0]
+        # hardcoded classifier
+        # prediction = [1]
+        # if leukocytes < -1.5 : prediction = [0]
+        # if leukocytes >   .32: prediction = [0]
+        # if platelets  < -2.1 : prediction = [0]
+        # if platelets  >  1.8 : prediction = [0]
         
-        # return render_template('result.html', prediction=prediction)
         return render_template('triagem-resultado.html',
                                 result=dict_results[prediction[0]][0],
                                 legend=dict_results[prediction[0]][1],
