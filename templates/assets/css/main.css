@@ -2460,12 +2460,6 @@ footer .copyright p {
         display: flex;
     }
 
-    body header .navbar-expand .navbar-nav.contacts,
-    body header .navbar-expand .navbar-nav.items ,
-    body header .navbar-expand .navbar-nav.icons .social {
-        display: none;
-    }
-
     body .slider-full .inner .left:before,
     body .slider-full .inner .left:after,
     body.portfolio .slider-disabled .inner:before {
