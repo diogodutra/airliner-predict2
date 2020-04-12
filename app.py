@@ -12,12 +12,18 @@ app = Flask(__name__, static_folder='templates/assets')
 def home():
 	return render_template('triagem.html')
 
+
+@app.route('/sobre')
+def sobre():
+	return render_template('sobre.html')
+
+
 @app.route('/triagem-resultado', methods=['POST','GET'])
 def get_delay():
     if request.method=='POST':
 
         dict_results = {
-            0: ('Negativo', 'Dispensar do teste SARS-CoV-2 RT-PCR.', '#b4ecb4', 'icon-check'),
+            0: ('Negativo',     'Dispensar do teste SARS-CoV-2 RT-PCR.',  '#b4ecb4', 'icon-check'),
             1: ('Inconclusivo', 'Encaminhar ao teste SARS-CoV-2 RT-PCR.', '#ffd394', 'icon-question'),
         }
 
@@ -46,15 +52,15 @@ def get_delay():
         cat_vector = scaler.transform(cat_vector)
         # prediction = model.predict(cat_vector)
         probability = model.predict_proba(cat_vector)
-        # print(probability[0,0])
+        print(probability[0,0])
         prediction = [0] if (probability[0, 0]>.98) else [1]
 
         # hardcoded classifier
-        # prediction = [1]
-        # if leukocytes < -1.5 : prediction = [0]
-        # if leukocytes >   .32: prediction = [0]
-        # if platelets  < -2.1 : prediction = [0]
-        # if platelets  >  1.8 : prediction = [0]
+        prediction = [1]
+        if leukocytes < -1.5 : prediction = [0]
+        if leukocytes >   .32: prediction = [0]
+        if platelets  < -2.1 : prediction = [0]
+        if platelets  >  1.8 : prediction = [0]
         
         return render_template('triagem-resultado.html',
                                 result=dict_results[prediction[0]][0],
