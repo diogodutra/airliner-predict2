@@ -765,10 +765,6 @@ header .navbar-sticky {
     background-color: #182c50;
 }
 
-header .navbar-expand .navbar-nav.toggle {
-    display: none;
-}
-
 .form-wizard header .navbar-expand .navbar-nav.toggle {
     display: block;
 }
