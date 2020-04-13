@@ -2771,3 +2771,19 @@ footer .copyright p {
         font-size: 13px;
     }
 }
+
+.nav-link {
+    font-size: 16px;
+}
+
+@media(max-width: 400px) {
+    .nav-link {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 300px) {
+    .nav-link {
+        font-size: 9px;
+    }
+}
